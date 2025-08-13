@@ -29,12 +29,9 @@ export class SupabaseController {
     try {
       const client = this.supabaseService.getClient();
       const table = body.table || 'your_table_name';
-      
+
       // Example query - replace with your actual table
-      const { data, error } = await client
-        .from(table)
-        .select('*')
-        .limit(5);
+      const { data, error } = await client.from(table).select('*').limit(5);
 
       if (error) {
         throw error;

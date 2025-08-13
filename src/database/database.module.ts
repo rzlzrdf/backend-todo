@@ -9,7 +9,8 @@ import { Todo } from '../entities/todo.entity';
   imports: [
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: (configService: ConfigService) => getDatabaseConfig(configService),
+      useFactory: (configService: ConfigService) =>
+        getDatabaseConfig(configService),
       inject: [ConfigService],
     }),
     TypeOrmModule.forFeature([User, Todo]),
